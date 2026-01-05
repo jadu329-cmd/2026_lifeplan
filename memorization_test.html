@@ -307,6 +307,210 @@
             color: #333;
             margin-top: 10px;
         }
+
+        .wrong-answers-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .wrong-answers-header h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .wrong-answers-header p {
+            color: #6b7280;
+            font-size: 1em;
+        }
+
+        /* 모바일 반응형 스타일 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .game-selector {
+                margin-bottom: 20px;
+            }
+
+            .mode-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            button {
+                padding: 14px 20px;
+                font-size: 15px;
+                width: 100%;
+            }
+
+            .category-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .category-buttons button {
+                width: 100%;
+            }
+
+            .verse-info {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .verse-reference {
+                font-size: 20px;
+            }
+
+            .verse-number {
+                font-size: 13px;
+            }
+
+            .progress {
+                font-size: 13px;
+            }
+
+            textarea {
+                min-height: 180px;
+                padding: 12px;
+                font-size: 15px;
+            }
+
+            .result-message {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .answer-comparison {
+                padding: 15px;
+            }
+
+            .answer-line {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .control-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .control-buttons button {
+                width: 100%;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+
+            .nav-buttons button {
+                width: 100%;
+            }
+
+            .wrong-answer-item {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .wrong-answer-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .wrong-answer-reference {
+                font-size: 18px;
+            }
+
+            .wrong-answer-number {
+                font-size: 13px;
+            }
+
+            .wrong-answer-verse {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .correct-answer {
+                padding: 12px;
+                font-size: 15px;
+            }
+
+            .wrong-answers-header {
+                margin-bottom: 20px;
+            }
+
+            .wrong-answers-header h2 {
+                font-size: 1.5em;
+            }
+
+            .wrong-answers-header p {
+                font-size: 0.9em;
+            }
+
+            #wrongAnswersList > div:first-child {
+                padding: 12px !important;
+            }
+
+            #wrongAnswersList > div:first-child p {
+                font-size: 16px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+
+            .verse-reference {
+                font-size: 18px;
+            }
+
+            textarea {
+                min-height: 150px;
+                font-size: 14px;
+            }
+
+            .result-message {
+                font-size: 15px;
+            }
+
+            .answer-line {
+                font-size: 14px;
+            }
+
+            .wrong-answer-reference {
+                font-size: 16px;
+            }
+
+            .wrong-answer-verse {
+                font-size: 14px;
+            }
+
+            button[onclick="goHome()"] {
+                font-size: 18px !important;
+                padding: 12px 20px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -362,16 +566,16 @@
                     <button class="btn-secondary" onclick="nextVerse()">다음</button>
                 </div>
                 <div class="nav-buttons" style="margin-top: 10px;">
-                    <button class="btn-info" onclick="showWrongAnswers()" style="margin-right: 10px;">📝 오답노트</button>
+                    <button class="btn-info" onclick="showWrongAnswers()">📝 오답노트</button>
                     <button class="btn-primary" onclick="goHome()" style="font-size: 20px; padding: 8px 16px;">🏠</button>
                 </div>
             </div>
         </div>
 
         <div class="game-area" id="wrongAnswersArea" style="display: none;">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <h2 style="color: #333; margin-bottom: 10px;">📝 오답 노트</h2>
-                <p style="color: #6b7280;">틀렸던 문제들을 다시 확인해보세요</p>
+            <div class="wrong-answers-header">
+                <h2>📝 오답 노트</h2>
+                <p>틀렸던 문제들을 다시 확인해보세요</p>
             </div>
             
             <div id="wrongAnswersList"></div>
